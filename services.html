@@ -1,20 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SKCAPWealth</title>
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<script src="script.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SKCAPWealth</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="script.js"></script>
+  <style>
+    /* Layout */
+    .mcontainer {
+      display: flex;
+      width: 100%;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 220px;
+      background: #2c3e50;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .tab-btn {
+      padding: 15px;
+      border: none;
+      background: none;
+      color: white;
+      text-align: left;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .tab-btn:hover,
+    .tab-btn.active {
+      background: #34495e;
+    }
+
+    /* Content */
+    .content {
+      flex: 1;
+      padding: 20px;
+      margin-left: 2rem;
+    }
+
+    .tab-content {
+      display: none;
+      text-align: left;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+
+      .mcontainer {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+        flex-direction: row;
+        overflow-x: auto;
+        white-space: nowrap;
+        position: sticky;
+        /* 👈 makes it stick */
+        top: 5rem;
+        /* 👈 sticks to top */
+        z-index: 100;
+        /* 👈 stays above content */
+      }
+
+      .tab-btn {
+        flex: 0 0 auto;
+        text-align: center;
+        padding: 12px 20px;
+      }
+
+      .content {
+        margin-left: 0;
+        padding: 15px;
+      }
+    }
+  </style>
 </head>
 
 
 <body>
 
-<!-- NAV -->
+  <!-- NAV -->
 <nav>
-  <img src="/Artboard 4.png" alt="Logo">
+  <img class="logo" src="/Artboard 4.png" alt="Logo">
+  <div class="hamburger" onclick="toggleMobileMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
   <ul>
     <li><a href="/">Home</a></li>
     <li><a href="/about.html">About</a></li>
@@ -22,99 +111,834 @@
     <li><a href="/services.html">Services</a></li>
     <li><a href="/contact.html">Contact</a></li>
     <!-- Call icon -->
-     <li><a href="tel:1234567890"><i class="fa-solid fa-phone"></i></a></li>
+     <li><a href="tel:+91-9325898024"><i class="fa-solid fa-phone"></i></a></li>
   </ul>
 </nav>
 
-<!-- HERO -->
-<div class="hero">
-  <div>
-    <h2>Grow, Protect & Preserve Your Wealth</h2>
-    <button onclick="goToPage('services')">Get Started</button>
+  <!-- HERO -->
+  <div class="hero2">
+    <div>
+      <h2>Comprehensive Financial Solutions Tailored to Your Future.</h2>
+      <button onclick="goToPage('services')">Get Started</button>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="mcontainer">
+
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <button class="tab-btn active" onclick="openTab(event, 'tab1')">Mutual Fund</button>
+        <button class="tab-btn" onclick="openTab(event, 'tab2')">Fixed Deposit</button>
+        <button class="tab-btn" onclick="openTab(event, 'tab3')">Taxation Saving</button>
+        <button class="tab-btn" onclick="openTab(event, 'tab4')">Life Insurance</button>
+        <button class="tab-btn" onclick="openTab(event, 'tab5')">Health Insurance</button>
+        <button class="tab-btn" onclick="openTab(event, 'tab6')">PMS</button>
+        <button class="tab-btn" onclick="openTab(event, 'tab7')">AIF</button>
+        <button class="tab-btn" onclick="openTab(event, 'tab8')">Child Future Saving</button>
+        <button class="tab-btn" onclick="openTab(event, 'tab9')">Retirement Saving</button>
+        <button class="tab-btn" onclick="openTab(event, 'tab10')">Legacy Saving</button>
+        <button class="tab-btn" onclick="openTab(event, 'tab11')">Direct Stocks</button>
+        <button class="tab-btn" onclick="openTab(event, 'tab12')">Unlisted Shares</button>
+        <button class="tab-btn" onclick="openTab(event, 'tab13')">Gold & Silver</button>
+        <button class="tab-btn" onclick="openTab(event, 'tab14')">NPS</button>
+      </div>
+
+      <!-- Content -->
+      <div class="content">
+        <div id="tab1" class="tab-content active">
+          <h2>Mutual Fund</h2>
+          <p>
+          <h3>What is mutual fund?</h3>
+
+          Mutual funds are financial instruments which invest in a portfolio of securities. These securities may be
+          stocks, bonds, money market instruments, gold, silver and real estate investment trusts (REITs) etc. You can
+          buy units of mutual funds; each unit represents a certain percentage of the mutual fund scheme portfolio.
+          Mutual funds are managed by professional fund managers who manage the schemes according to the investment
+          objectives of the schemes.
+          How to invest in mutual funds?
+          <br>
+          When an asset management company (AMC) house launches a new mutual fund scheme, it invites subscriptions from
+          the public in the New Fund Offer (NFO). In the NFO period, investors are allotted units at par value (usually
+          Rs 10). If you invested Rs 10,000 in a mutual fund scheme during the NFO period, you would be allotted 1,000
+          units. You need to be KYC compliant to invest in mutual funds. Your financial advisor can help you fulfil KYC
+          requirements. Along with KYC documents, you need to provide bank details to invest in mutual funds. Investors
+          can invest in mutual funds only from their own bank accounts.
+          <br>
+          At the end of the NFO period, the money pooled from all the investors are invested in a diversified portfolio
+          of securities according to the scheme's mandate. After the NFO, investors can buy units of open ended schemes
+          from the AMC at prevailing Net Asset Values (NAV). You can also redeem open ended mutual fund schemes at any
+          time at prevailing NAVs. The redemption proceeds will be credited to your bank account on T+3 for equity
+          funds. Investors should note that for redemptions within a certain period of time from investment exit loads
+          may apply.
+          <br>
+          <br>
+          <h3>Different types of mutual funds</h3>
+          There are three broad categories of mutual funds:-
+          <br>
+          <br>
+          <h4>Equity funds:</h4>
+
+          These mutual fund schemes invest in equity and equity related securities. Equity funds have sub-categories
+          based on the market cap segments, where the scheme may primarily invest in e.g. large cap, large and midcap,
+          midcap, small cap, multicap, flexicap etc. The primary investment objective of equity funds is capital
+          appreciation.
+          Debt funds:
+          <br>
+          These mutual funds schemes invest in debt and money market instruments. Debt funds have sub-categories based
+          on the maturity profiles of the underlying debt or money market instruments e.g. overnight, liquid,
+          ultra-short duration, low duration, short duration, medium duration, long duration etc. The primary investment
+          objective of equity funds is capital appreciation.
+          <br>
+          <br>
+          <h4>Hybrid funds:</h4>
+          These funds invest in both equity and debt securities. They may also invest in other classes like gold, REITs,
+          InvITs etc. The primary investment objective of hybrid funds is asset allocation. Different types of hybrid
+          funds include aggressive hybrid funds, conservative hybrid funds, balanced advantage funds, equity savings
+          etc.
+          <br>
+          Different fund categories and sub-categories have different risk profiles. Mutual funds provide investment
+          solutions for a wide spectrum of risk appetites and investment needs. Your financial advisor can help you
+          select the right investment option for you.
+          <br>
+          <br>
+          <h4>Taxation of mutual funds</h4>
+          Mutual funds, whose average equity allocation (i.e. where underlying assets are equity and equity related
+          securities) is 65% or more, are treated as equity funds from tax perspective. These include all equity funds
+          and also several hybrid fund categories. Short term capital gains (investment holding period of less than 12
+          months) in equity funds are taxed at 15%. Long term capital gains (investment holding period of more than 12
+          months) in equity funds are tax free up to Rs 100,000 and taxed at 10% thereafter. Short term capital gains
+          (investment holding period of less than 36 months) in non equity funds are taxed as per the income tax rate of
+          the investor. Long term capital gains (investment holding period of more than 36 months) in non equity funds
+          are taxed at 20% after allowing for indexation. Investments in mutual fund Equity Linked Savings Schemes
+          (ELSS) qualify for deductions under Section 80C.</p>
+        </div>
+        <div id="tab2" class="tab-content">
+          <h2>Fixed Deposit</h2>
+          <p>
+            Fixed deposits has traditionally been and still is the most popular investment option in India. As per RBI's
+            report on household savings, 56% of household financial assets are invested in Bank FDs. Corporate Fixed
+            Deposits are term deposits like bank FDs. They offer fixed rate of interest and principal amount on
+            maturity. However, instead of banks, corporate FDs are offered by non banking financial companies (NBFCs).
+            Corporate FDs are very popular among informed investors since offer higher returns compared to bank FDs.
+
+            <br>
+            <br>
+          <h3>Bank FD versus Corporate FD</h3>
+          <h4>Rate of return:</h4>
+          <p>Interest rates of corporate FDs are usually higher than interest rates of banks FDs. For example, current 3
+            -
+            5 year FD interest in SBI is 6.1%, whereas Bajaj Finance is offering 7% interest rate on 3 - 4 year
+            FD.</p>
+          <br>
+          <h4>Tenure:</h4>
+          <p>The tenure for bank FDs range from 7 days to 10 years. The tenure for corporate FDs range from 12 months to
+            maximum 4 - 6 years. If you want to invest for very long tenure, e.g. 8 to 10 years, then bank FD will be
+            the only term deposit option for you. However, for shorter tenures you may consider corporate FDs.</p>
+          <br>
+          <h4>Lock-in period:</h4>
+          <p>There is no lock-in period in bank FDs. Corporate FDs may have lock-in period. Usually lock-in period for
+            corporate FDs is 3 months; you cannot make any withdrawal prior to the completion of the lock-in period.
+            However, not all corporate FDs may have lock-in periods.</p>
+          <br>
+          <h4>Premature withdrawals:</h4>
+          <p>Premature withdrawals are allowed in both bank and corporate FDs. However, penalties may apply for
+            premature
+            withdrawals may be applicable for both bank and corporate FDs. If you want the flexibility of making
+            premature withdrawals, then bank FDs will be the more favourable option for two reasons (a) no lock-in
+            period (higher liquidity) and (b) lesser premature withdrawal penalty. While bank FDs may offer more
+            flexibility for premature withdrawals, you should weigh this as a trade-off against higher returns offered
+            by corporate FDs.</p>
+          <br>
+          <h4>Taxation:</h4>
+          <p>Taxation of bank FDs and corporate FDs is the same. The interest paid by the FD is added to your income and
+            taxed as per your income tax slab.</p>
+          <br>
+          <h3>Points to consider for investing in corporate FDs</h3>
+          <h4>Interest rate:</h4>
+          <p>Different NBFCs offer different interest rates on their FDs. You should compare different FDs and make
+            informed investment decisions. However, you should also take credit risk into consideration.</p>
+          <br>
+          <h4>Credit risk:</h4>
+          <p>Credit risk refers to the NBFC's failure of meeting interest and / or principal payment obligations,
+            exposing the investor to potential loss of income and / or capital. You should consider the credit rating of
+            the instrument and make informed investment decisions.</p>
+          <br>
+          <h4>Tenures:</h4>
+          <p>corporate FDs may offer different interest rates for different tenures; interest rates are usually higher
+            for longer tenures. You should decide as per investment needs.</p>
+          <br>
+          <h4>Mode of interest pay-out:</h4>
+          <p>corporate FDs offer both periodic (non cumulative) and cumulative interest pay-out. In periodic interest
+            payout, the interest will be paid to monthly, quarterly, half yearly or yearly; the rate of interest will
+            differ for different pay-out intervals. In cumulative interest pay-out the interest is re-invested and you
+            get the benefits of compound interest. You should decide on cumulative or non cumulative interest depending
+            on your investment needs.</p>
+          <br>
+          <h3>What are bonds?</h3>
+          Bonds are fixed income instruments which pay fixed rate of interest at regular intervals and the principal
+          amount on maturity. Bonds as an asset class are very popular in the developed economies. However, the bond
+          market in India has historically been relatively small. In more recent times, with Bank FD interest rates
+          declining, bonds are gaining a lot of popularity among retail and HNI investors.
+          <br>
+          <br>
+          <h3>How do bonds work?</h3>
+
+          You can buy bonds both from the primary market (at the time when the bond is issued) or from the secondary
+          market (stock exchanges). You need to have Demat accounts to invest in bonds in secondary market. If you buy
+          in the primary issue, you will get the bond at face value. In the secondary market, the bonds will be priced
+          either at premium or discount to the face value based on prevailing interest rates. The bond will make
+          periodic interest payments to you based on the coupon rate. On maturity you will get the face value of the
+          bond. You can also sell the bond before maturity in the secondary market at prevailing market price.
+          </p>
+        </div>
+        <div id="tab3" class="tab-content">
+          <h2>Taxation Saving</h2>
+          <p>Planning For Tax Saving Investments Efficiently & Filing Income Tax Return . ITR represents an individual's
+            income and the taxes that are to be paid on that income during the financial year starting on 1st April till
+            31st Mar </p>
+        </div>
+        <div id="tab4" class="tab-content">
+          <h2>Life Insurance</h2>
+          <p>
+
+
+            Life is unpredictable. So, it is important to ensure that your family and loved ones are taken care of
+            financially in case something happens to you. This is where life insurance comes in. It can provide some
+            financial peace of mind if the worst were to happen.Life insurance offers a way to replace the loss of
+            income that occurs when someone dies. Life insurance is insurance for you and your family's peace of mind.
+            With a life insurance policy in place, you can
+            <br>
+          <ul>
+            <li>Provide financial support to your loved ones</li>
+
+            <li>Protect your home mortgage, loans, credit card borrowings etc.</li>
+
+            <li>Provide financial support to your loved ones to achieve their goals in your absence</li>
+
+            <li>Provide financial support to your loved ones to maintain their lifestyle, no matter what happens</li>
+
+            <li>Take care of your estate planning needs</li>
+
+            <li>Look at other retirement saving/investment vehicles</li>
+          </ul>
+
+          </p>
+        </div>
+        <div id="tab5" class="tab-content">
+          <h2>Health Insurance</h2>
+          <p>
+          <h3>When should we take medi-claim policy?</h3>
+          <p>
+            Health insurance is the insurance which protects us from any health emergencies & incurred hospitalization
+            expenses. In this busy and hectic life everybody should have a health insurance policy which can be very
+            useful in time of emergencies. Health insurance, also known as medi-claim policy, allows you to claim
+            cashless hospitalization or reimbursement up to the sum insured limit.
+          </p>
+          <h3>Why Mediclaim policy needed?</h3>
+          <ul>
+            <li>Every human suffers from some illness or injury in lifetime.</li>
+            <li>Emergencies or illness can come anytime without giving any warning.</li>
+            <li>There are no good facilities in government hospitals whereas private hospitals are too expensive.</li>
+            <li>Doctor's fees, diagnostic charges as well as the medicines value are too expensive.</li>
+            <li>Health is wealth.</li>
+          </ul>
+
+          </p>
+        </div>
+        <div id="tab6" class="tab-content">
+          <h2>PMS</h2>
+          <p>
+
+          <p>Portfolio Management Services or PMS, is a service offered by the Portfolio Manager or an asset management
+            company, is an investment portfolio in stocks, fixed income, debt, cash and other securities, managed by a
+            professional fund manager that can potentially be tailored to meet specific investment objectives. Unlike
+            mutual funds, where investors own units of the mutual fund scheme, in a PMS, the investors own individual
+            securities. Although the portfolio managers may oversee hundreds of portfolios, your account may be unique.
+          </p>
+
+          <h3>Types of PMS</h3>
+          <ul>
+            <li>Discretionary PMS: Under this service, the choice as well as the timings of the investment decisions is
+              solely lies with the Portfolio Manager.</li>
+            <li>Non-Discretionary: Under this service, while the portfolio manager will suggest only the investment
+              ideas, the investor will decide the investment timings and decisions regarding the portfolio. However the
+              execution of the trades is done by the PMS portfolio manager.</li>
+            <li>Advisory: Under this service, while the PMS portfolio manager only suggests the investment ideas, the
+              decision as well as the execution of the investment decisions rest solely with the Investors.</li>
+          </ul>
+
+          <h3>Benefits of a PMS</h3>
+          <ul>
+            <li>Professional Management: The PMS Service provides professional management of stock portfolios with the
+              main objective of delivering long-term performance while minimising risk.</li>
+            <li>Continuous Monitoring: The PMS fund manager, constantly monitors the portfolio and periodic changes are
+              made by him/her to optimise the performance.</li>
+            <li>Flexibility: The Portfolio Manager has fair amount of flexibility in terms of holding cash, for example,
+              it can keep the cash holding even up to 100% depending upon his./her understanding of the market
+              conditions. The portfolio manager can create a reasonable concentration in the investor portfolios by
+              investing disproportionate amounts in favour of foreseeable opportunities in the market situation.</li>
+            <li>Risk Control: The research team of the PMS Service, provides real time information to support the fund
+              management team and thus control the risk.</li>
+            <li>Ease of Operation: Portfolio Management Service provides the clients with a customised service and takes
+              care of all the administrative aspects and provides periodic portfolio reporting. It discloses the overall
+              status of the portfolio, holding and performance on a daily basis. For this, the PMS Service provides a
+              login ID and password for the investor to check his/her PMS details.</li>
+            <li>Custom made Advice: For select clients, the PMS provider gives the benefit of tailor made investment
+              advice designed to achieve investors various financial goals.</li>
+          </ul>
+
+          </p>
+        </div>
+        <div id="tab7" class="tab-content">
+          <h2>AIF</h2>
+          <p>
+
+          <h3>Alternative Investment Funds (AIF)</h3>
+          <p>
+            Alternative Investment Funds or AIF in short, are defined as privately pooled investment funds and
+            categorized by
+            The Securities Exchange Board of India (SEBI) as Category I AIF, Category II AIF, and Category III AIF. It
+            is a fund of
+            funds (FOF) that invests in asset classes other than stocks, bonds, Government securities, fixed deposits or
+            cash.
+            It pools money from various HNI investors and invests them under different investment categories as
+            specified by the
+            SEBI for the benefit of investors.
+          </p>
+          <h3>Assets Under Management (AUM)</h3>
+          <p>
+            Assets under management (AUM) under AIF can include start-ups, SME funds, infrastructure funds, private
+            equity funds,
+            venture capital or even hedge funds that may be trading in listed or unlisted derivatives depending on the
+            fund type.
+          </p>
+          <h3>Minimum Investment Amount</h3>
+          <p>
+            The minimum investment amount to invest in an AIF is Rs 1.00 Crore depending on the type of AIF. Therefore,
+            it can be
+            called as product meant for the HNIs.
+          </p>
+          <h3>Advantages of AIF</h3>
+          <ul>
+            <li>Diversification</li>
+            <li>AIFs have considerable freedom to decide where to invest unlike most other funds or mutual funds which
+              are
+              totally regulated and follow the fund/scheme guidelines as mandated by SEBI.</li>
+            <li>Various non-traditional investment options available to AIFs which generally are not available to all
+              investors,
+              particularly retail investors.</li>
+          </ul>
+          <h3>How AIF works?</h3>
+          <p>
+            Alternative Investment Funds or AIF raise money to form an investment fund pool that invests in
+            non-traditional
+            assets classes that the ordinary investors may not have access through any other products like Mutual Funds.
+            Money can be
+            pooled from various types of investors, example - Resident Investors, NRIs or non-resident investors or
+            foreign investors.
+          </p>
+          <h3>Who can invest in AIF?</h3>
+          <p>
+            AIFs are mainly aimed at high net worth or HNI individuals who are ready to invest minimum Rs 1.00 Crore and
+            take high
+            risk. While the return potential of AIF may be very high, the risk is also very high. Therefore, this is not
+            meant for all
+            investors excepting those who are well versed with these kind of investing.
+          </p>
+          <h3>In summary,</h3>
+          <ul>
+            <li>If you have a large amount to invest in one instrument</li>
+            <li>You have the ability to sustain the risk</li>
+            <li>You are ready to remain invested with long lock-in periods</li>
+          </ul>
+
+          </p>
+        </div>
+        <div id="tab8" class="tab-content">
+          <h2>Child Future Saving</h2>
+          <p>
+            Secure Your Child’s Financial Future
+          <h3>Why Choose Our Child Savings Plan?</h3>
+          <p>Our Child Future Savings Plan is designed to help you systematically save and invest for your child's
+            future, ensuring financial security when they need it the most.</p>
+
+          <h4>Key Benefits:</h4>
+          <ul>
+            <li>Flexible Contribution Options: Choose a savings schedule that fits your financial situation, whether
+              it's monthly, quarterly, or yearly.</li>
+            <li>High-Interest Growth: Your savings will accumulate with competitive interest rates, helping you maximize
+              returns.</li>
+            <li>Tax Benefits: Enjoy tax advantages on your contributions, ensuring you save more efficiently.</li>
+            <li>Guaranteed Security: Your funds are protected, providing peace of mind for your child's future.</li>
+            <li>Education & Life Goal Planning: Use the savings for college tuition, skill development, or major life
+              milestones like buying a home or starting a business.</li>
+            <li>Early Withdrawal Options: Access funds when needed for important expenses, subject to plan terms.</li>
+          </ul>
+
+          <h4>Who Can Benefit from This Plan?</h4>
+          <ul>
+            <li>Parents planning for their child's higher education expenses</li>
+            <li>Guardians looking for a secure savings option for a child's future</li>
+            <li>Families wanting to invest in long-term financial security for their children</li>
+            <li>Anyone seeking a tax-efficient way to save for their child's important life goals</li>
+          </ul>
+
+          </p>
+        </div>
+        <div id="tab9" class="tab-content">
+          <h2>Retirement Saving</h2>
+          <p>
+          <p>
+            Retirement planning is the plan and action of accumulating a certain corpus by the time you are of
+            retirement age. It is a plan for living the choice of life you have dreamt for your silver years. This
+            essentially means that you need to plan for a steady source of income for yourself at the time that you
+            retire from your active career.
+          </p>
+          <h3>Why should you plan for retirement?</h3>
+          <p>
+            Planning for retirement is a very important financial decision you should make if you want to live a stress
+            free independent life when your steady income from your job or work stops.
+          </p>
+          <h3>Steps of retirement planning</h3>
+          <ol>
+            <li>
+              The first step to plan your retirement is to decide what kind of life you see for yourself in your
+              retirement. Do you want to live a quiet life in the countryside growing your own vegetables, or would you
+              want to live in a community with like minded people. Would you like to spend time reading books, or
+              travelling the world? The type of life you want to live will decide how much money you would need to save
+              up for those days.
+            </li>
+            <li>
+              The next step is to take stock of your assets. Your value of your existing assets will make up some of
+              your retirement corpus. The rest of the corpus needs to be built over the time you have left till your
+              retirement.
+            </li>
+            <li>
+              A very important consideration while planning for your retirement is to take a look at how much time you
+              still have till the time your retirement sets in. As a rule of thumb, the longer you have for your
+              investment till your retirement, the larger the corpus you can build, helping you to come closer to your
+              dream life. The investments you plan will have to be done with respect to the time left as well as your
+              risk appetite.
+            </li>
+            <li>
+              The next step is to plan the investment avenues that can help you reach your goals. You can take your pick
+              from a variety of options like, ETFs, NPS or mutual funds that may offer you the growth of equity or the
+              assurance of debt. You may also consider investing in some good stocks for added returns.
+            </li>
+          </ol>
+
+          </p>
+        </div>
+        <div id="tab10" class="tab-content">
+          <h2>Legacy Saving</h2>
+          <h2>Plan Today for an Enduring Legacy</h2>
+          <p>Legacy planning is not all about leaving possessions—it's about keeping your family safe, ensuring your
+            wishes are followed, and moving your money in the way that works best for you. Our Legacy Planning Services
+            help you create a complete plan to keep and pass your property with comfort and assurance.</p>
+
+          <h3>Why Legacy Planning Matters</h3>
+          <p>Without a well-thought-out plan, your money could end up somewhere you don't want it to, and your loved
+            ones could face unnecessary financial and legal complexities. Our expert guidance ensures your legacy will
+            last for generations.</p>
+
+          <h3>Major Advantages of Our Estate Planning Services</h3>
+          <ul>
+            <li>Asset Protection & Wealth Transfer: Safeguard your wealth and transfer it with ease.</li>
+            <li>Save Taxes & Attorney Fees: Avoid estate taxes, probate fees, and unnecessary legal troubles.</li>
+            <li>Personalized Estate Plans: Wills, trusts, and other legal structures tailored to your unique
+              requirements.</li>
+            <li>Philanthropic Give: Establish charitable gifts or foundations to leave a lasting legacy.</li>
+            <li>Business Succession Planning: Secure the future of your business and hand it over smoothly.</li>
+            <li>Power of Attorney & Healthcare Directives: Leave your healthcare and financial choices to capable hands.
+            </li>
+          </ul>
+
+          <h3>Our Legacy Planning Services include</h3>
+          <ul>
+            <li>Estate Planning: Preparing wills, trusts, and estate transfer plans.</li>
+            <li>Tax Optimization: Positioning assets to reduce tax imposition on beneficiaries.</li>
+            <li>Trust & Wealth Management: Protecting and growing your wealth for generations.</li>
+            <li>Business Succession Planning: Ensuring smooth transition for family businesses or partnerships.</li>
+            <li>Charitable & Philanthropic Planning: Creating charitable foundations or gifts that are meaningful to
+              you.</li>
+            <li>Legal & Financial Advice: Obtaining legal and financial advice to successfully execute your plan.</li>
+          </ul>
+
+          <h3>Who Should Be Considering Legacy Planning?</h3>
+          <ul>
+            <li>Individuals with major assets who are looking to limit tax and legal issues.</li>
+            <li>Parents and grandparents who wish to secure their family's financial future.</li>
+            <li>Business leaders developing long-term stability and transition plans.</li>
+            <li>Those who wish to make a significant charitable gift.</li>
+          </ul>
+          </p>
+        </div>
+        <div id="tab11" class="tab-content">
+          <h2>Direct Stocks</h2>
+          <p>
+          <h2>What is Private/Direct Equity Investment?</h2>
+          <p>
+            Private equity investment refers to investing in private limited companies i.e. companies that are not
+            listed in stock exchanges. The investment tenure in private equity is usually quite long e.g. 5 to 10 years.
+            The minimum investment in private equity is usually quite large. As an asset class, private equity is suited
+            for high net worth investors (HNIs), ultra high net worth investors (UHNI), Corporates and Institutional
+            Investors. Usually private equity investments are made in company which is one step away from Initial Public
+            Offering (IPO). However, these investments can also be made at an earlier stage of a company's growth.
+            However, private equity investments are not usually made in very early stage ventures.
+          </p>
+
+          <h2>How does a Private Equity Fund work?</h2>
+          <p>
+            Private equity (PE) funds are pooled funds like mutual funds or Portfolio Management Services (PMS).
+            However, the number of investors in a private equity is much smaller compared to MFs or PMS. The fund is
+            managed by investment professionals known as General Partners (GP). The investors will participate in the PE
+            fund as Limited Partners (LP). The GP will look for investment opportunities in private companies with high
+            revenue growth prospects and strong profit margins. Such companies may look for capital infusion to fund the
+            next stage of growth, increase business scalability to multiply revenues and profits. Private equity
+            investors look for very high returns on investment, usually multiples of growth e.g. 10 or 15 times growth
+            of their investment. Exit opportunities (redemption or sale) are discussed with the promoters of the company
+            at the time of investment. Exit is usually through IPO or through strategic sale to a company who wants to
+            acquire a stake in the company - majority or minority stake.
+          </p>
+
+          <h2>Who should invest in Private Equity?</h2>
+          <p>
+            Private Equity Investments can give you much higher investments than traditional equity investments i.e.
+            stocks or mutual funds, as mentioned earlier, returns of Private Equity investments is usually in terms of
+            multiples e.g. 10X, 20X etc. However, private equity investment is usually for investors with very high risk
+            appetites and very long investment tenures. You should also have sufficient knowledge of the industry and
+            business model of the investee company; you should work with a financial advisor who has knowledge of the
+            industry and business. The liquidity of private equity investments is very low; you need to wait till the
+            planned exit either through IPO or strategic sale. Private equity investments is not for your usual
+            life-stage financial goals e.g. children's education, children's marriage, retirement planning etc. Your
+            core portfolio should tak care your life-stage goals. Private equity is purely for wealth creation
+          </p>
+
+          <h2>How to invest in Private Equity?</h2>
+          <p>
+            As per Bain Consulting report, private equity investments in India exceeded $60 billion in 2022. Most of the
+            private equity investments are from institutional investors. In recent years, there is growing interest in
+            Private Equity from HNI / UHNI investors. There are several ways of investing in Private Equity. You can
+            become an LP in PE fund. Alternatively, you can invest in Alternative Investment Funds (AIF), which in turn
+            in invest in private equity, venture capital, pre IPO opportunities.
+          </p>
+
+          </p>
+        </div>
+        <div id="tab12" class="tab-content">
+          <h2>Unlisted Shares</h2>
+          <p>
+            There were many public issues where we have seen successful listings of RBL Bank, Avenue Supermarts, Ujjivan
+            Finance and many more. Most of these shares were actively traded in the unlisted space where investors saw
+            significant gains when the stock got listed.
+          </p>
+          <h3>Benefits</h3>
+          <ul>
+            <li>Novel Investment option aiding in diversification of overall portfolio.</li>
+            <li>Entry to new age businesses at an early stage providing scope of immense growth.</li>
+            <li>Availability in smaller ticket sizes allows portfolio creation of unlisted securities.</li>
+            <li>Limited correlation with listed market space leads to stable prices in short term.</li>
+            <li>Exposure to vast unlisted small and medium enterprises.</li>
+          </ul>
+          <h3>Key Risks</h3>
+          <ul>
+            <li>Price/Valuation Discovery of shares in unlisted space can be difficult; unlike listed space.</li>
+            <li>Stock Liquidity is mainly dependent on demand and supply. If there is a poor demand for any unlisted
+              stock, then it may lengthen investment cycle in case of non-listing of the scrip.</li>
+            <li>Transaction and Trading price are outside the purview of Regulatory Authority</li>
+            <li>One-year Lock-in stock listing; exposes investor to volatility post listing.</li>
+            <li>Early-stage companies could pose higher risk for a business model failure.</li>
+          </ul>
+
+        </div>
+        <div id="tab13" class="tab-content">
+          <h2>Gold & Silver</h2>
+          <p>
+
+          <p>Gold should be an important part of a diversified investment portfolio because its price increases in
+            response to events that cause the value of paper investments to decline.</p>
+          <h3>Why Invest in Gold?</h3>
+          <p>Your savings plan won't yield the desired result until you invest your savings wisely. Always choose your
+            investment options with your financial goals and risk appetite in mind. Gold as an investment option has the
+            following benefits:</p>
+          <h4>Hedge Against Inflation</h4>
+          <p>When you invest, you must keep in mind the impact inflation will have on your returns. Gold investment acts
+            as a hedge against inflation. Inflation lowers the buying power of the currency. In India, inflation exceeds
+            the interest rates on some occasions, making the actual return on investments negative.</p>
+          <h4>Multiple Options to Choose From</h4>
+          <p>Your investment in gold does not have to be physical. You could choose to invest in gold online also. Apart
+            from the physical and virtual investment choices, there are multiple asset classes for gold investment.</p>
+          <h4>When you plan to buy gold in the physical form, the choices range from jewelry and coins to bars. If you
+            wish to invest in gold online, your choices are digital gold, Gold ETFs, or Gold Mutual funds.</h4>
+          <ul>
+            <li>Each investment option has its merits. You can pick the one that suits your risk appetite and investment
+              and savings policy.</li>
+            <li>Buying gold online in various forms eliminates the security and purity problems associated with buying
+              physical gold as an investment.</li>
+          </ul>
+          <h4>Helps Diversify Your Portfolio</h4>
+          <p>A diversified portfolio reduces your investment risk. When you make your savings plan, include products
+            that are not closely correlated to each other in your portfolio. Investment in gold reduces the overall
+            volatility and risk of your portfolio.</p>
+          <h4>High Liquidity</h4>
+          <p>High liquidity is another advantage of investing in gold. Whether you invest in gold online or buy it in
+            the physical form, selling gold is not difficult. When you need funds quickly, selling physical assets like
+            property might pose a challenge but not gold. You can find buyers easily for physical gold and gold you own
+            in the form of digital gold or gold ETFs.</p>
+
+          </p>
+        </div>
+        <div id="tab14" class="tab-content">
+          <h2>NPS</h2>
+          <p>
+
+          <p>National Pension Scheme or NPS as it is popularly known, was initially launched by the Government in 2004
+            with the objective of changing the pension of retiring Government employees from defined benefit to defined
+            contribution plan. In 2009, the scheme was opened for citizens of India. The broader objective of NPS is to
+            convert India from a pension less society to a pensioned society like many developed economies.</p>
+
+          <h3>Investment options in NPS</h3>
+
+          <p>In NPS the contributors can decide where to invest their contributions to the National Pension Scheme.
+            investor can decide between two choices:</p>
+
+          <ul>
+            <li>Active Choice:</li>
+            <p>This is for informed investors who can decide where they want to invest their NPS contributions. There
+              are four asset classes that you can choose from, depending on your risk appetite and investment needs. You
+              can invest in multiple asset classes.</p>
+            <ul>
+              <li>Asset Class E: Equity</li>
+              <li>Asset Class D: corporate debt</li>
+              <li>Asset Class G: Government bonds</li>
+              <li>Asset Class A: Alternative investments like REITs, AIFs, InvITs etc.</li>
+            </ul>
+            <li>Auto Choice:</li>
+            <p>This is for investors who cannot decide on their own, where they to invest their NPS contributions. This
+              option is like a life-cycle fund, where the asset allocation depends on the investor's age. There are
+              three options in auto choice:</p>
+            <ul>
+              <li>Aggressive lifecycle fund: In this equity allocation is higher than the other two options</li>
+              <li>Moderate lifecycle fund: In this equity allocation is higher than conservative but lower than the
+                aggressive option</li>
+              <li>Conservative lifecycle fund: In this equity allocation is lower than the other two options</li>
+            </ul>
+          </ul>
+
+          <h3>Types of NPS accounts</h3>
+
+          <p>Tier I Account:</p>
+          <ul>
+            <li>This account does not allow premature withdrawal before retirement (60 years of age).</li>
+            <li>You can open a Tier I NPS account, with a deposit of Rs 500.</li>
+            <li>You can claim tax deductions of up to Rs 50,000 from your taxable income under Section 80CCD by
+              investing in Tier I account.</li>
+          </ul>
+
+          <p>Tier II Account:</p>
+          <ul>
+            <li>This account allows withdrawal prior to retirement age.</li>
+            <li>You can open a Tier II NPS account, with a deposit of Rs 1,000.</li>
+            <li>Tier I Account is mandatory requirement to open a Tier II Account.</li>
+            <li>Tier II NPS account is a voluntary savings facility; you cannot avail Section 80CCD tax benefits in Tier
+              II account.</li>
+          </ul>
+
+          <h3>Pension fund managers</h3>
+
+          <p>Private sector employees can select among 11 pension fund managers. However, Government employees have to
+            select from SBI Pension Fund, LIC Pension Fund and UTI retirement Solutions only.</p>
+          <ul>
+            <li>SBI Pension Funds Pvt. Ltd.</li>
+            <li>LIC Pension Fund Ltd.</li>
+            <li>UTI retirement Solutions Ltd.</li>
+            <li>HDFC Pension Management Co. Ltd.</li>
+            <li>ICICI Prudential Pension Fund Management Co. Ltd.</li>
+            <li>Kotak Mahindra Pension Fund Ltd.</li>
+            <li>Aditya Birla Sun Life Pension Management Ltd.</li>
+            <li>Tata Pension Management Ltd.</li>
+            <li>Max Life Pension Fund Management Ltd.</li>
+            <li>Axis Pension Fund Management Ltd.</li>
+          </ul>
+
+          <h3>NPS taxation on maturity</h3>
+
+          <p>As per NPS rules, you can withdraw up to 60% in lump sum on maturity. This withdrawal is totally tax
+            exempt, making NPS an extremely tax efficient investment option. The remaining 40% must be in re-invested in
+            purchasing annuities (annuity is a fixed monthly sum received by the investor). Life Insurance Corporation
+            of India (LIC) is the default annuity service provider, but you can also choose from 13 other annuity
+            service providers empanelled with PFRDA. The annuities received by you, will be added to your income and
+            taxed as per your income tax rate.</p>
+
+          <p>If you want to open an NPS account, do contact us at MC Financial Services.</p>
+
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Calculator -->
+
+  <div class="sip-container">
+  <h2>SIP Calculator</h2>
+
+  <!-- Monthly Investment -->
+  <div class="slider-container">
+    <label>Monthly Investment (₹)
+      <span class="value" id="investmentValue">5000</span>
+    </label>
+    <input type="range" id="investment" min="500" max="50000" step="500" value="5000">
+  </div>
+
+  <!-- Interest Rate -->
+  <div class="slider-container">
+    <label>Expected Return (%)
+      <span class="value" id="rateValue">12</span>
+    </label>
+    <input type="range" id="rate" min="1" max="20" step="0.5" value="12">
+  </div>
+
+  <!-- Duration -->
+  <div class="slider-container">
+    <label>Time Period (Years)
+      <span class="value" id="timeValue">10</span>
+    </label>
+    <input type="range" id="time" min="1" max="30" step="1" value="10">
+  </div>
+
+  <!-- Results -->
+  <div class="results">
+    <p>Invested Amount: ₹ <span id="investedAmount">0</span></p>
+    <p>Estimated Returns: ₹ <span id="returns">0</span></p>
+    <p><strong>Total Value: ₹ <span id="totalValue">0</span></strong></p>
   </div>
 </div>
 
-<!-- SERVICES -->
-<section id="services">
-  <h2 class="section-title">Our Services</h2>
-  <div class="services">
-    <div class="card">
-      <h3>Investment Planning</h3>
-      <p>Customized strategies for long-term growth.</p>
-    </div>
-    <div class="card">
-      <h3>Retirement Planning</h3>
-      <p>Secure your future with confidence.</p>
-    </div>
-    <div class="card">
-      <h3>Wealth Management</h3>
-      <p>Preserve and grow generational wealth.</p>
-    </div>
-  </div>
-</section>
+  <script>
+    function openTab(evt, tabId) {
+      // Hide all content
+      const contents = document.querySelectorAll(".tab-content");
+      contents.forEach(c => c.classList.remove("active"));
 
-<!-- PROCESS -->
-<section id="process">
-  <h2 class="section-title">Our Process</h2>
-  <div class="process">
-    <div class="step">
-      <h3>Understand</h3>
-      <p>We analyze your financial goals.</p>
-    </div>
-    <div class="step">
-      <h3>Establish</h3>
-      <p>Create a tailored investment plan.</p>
-    </div>
-    <div class="step">
-      <h3>Maintain</h3>
-      <p>Continuously optimize your portfolio.</p>
-    </div>
-  </div>
-</section>
+      // Remove active from buttons
+      const buttons = document.querySelectorAll(".tab-btn");
+      buttons.forEach(b => b.classList.remove("active"));
 
-<section class="split-section">
-  <div class="split-container">
+      // Show selected
+      document.getElementById(tabId).classList.add("active");
+      evt.currentTarget.classList.add("active");
+    }
 
-    <!-- Image -->
-    <div class="split-image">
-      <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e" alt="Wealth Planning">
+    const investmentSlider = document.getElementById("investment");
+  const rateSlider = document.getElementById("rate");
+  const timeSlider = document.getElementById("time");
+
+  const investmentValue = document.getElementById("investmentValue");
+  const rateValue = document.getElementById("rateValue");
+  const timeValue = document.getElementById("timeValue");
+
+  const investedAmountEl = document.getElementById("investedAmount");
+  const returnsEl = document.getElementById("returns");
+  const totalValueEl = document.getElementById("totalValue");
+
+  let chart;
+
+  function calculateSIP() {
+    let P = parseFloat(investmentSlider.value);
+    let r = parseFloat(rateSlider.value) / 100 / 12;
+    let n = parseFloat(timeSlider.value) * 12;
+
+    investmentValue.innerText = P;
+    rateValue.innerText = rateSlider.value;
+    timeValue.innerText = timeSlider.value;
+
+    let futureValue = P * ((Math.pow(1 + r, n) - 1) / r) * (1 + r);
+    let investedAmount = P * n;
+    let returns = futureValue - investedAmount;
+
+    investedAmountEl.innerText = investedAmount.toFixed(0);
+    returnsEl.innerText = returns.toFixed(0);
+    totalValueEl.innerText = futureValue.toFixed(0);
+
+  }
+
+  investmentSlider.oninput = calculateSIP;
+  rateSlider.oninput = calculateSIP;
+  timeSlider.oninput = calculateSIP;
+
+  calculateSIP();
+
+  </script>
+
+
+  <!-- PROCESS -->
+  <section id="process">
+    <h2 class="section-title">Our Process</h2>
+    <div class="process">
+      <div class="step">
+        <h3>Understand</h3>
+        <p>We analyze your financial goals.</p>
+      </div>
+      <div class="step">
+        <h3>Establish</h3>
+        <p>Create a tailored investment plan.</p>
+      </div>
+      <div class="step">
+        <h3>Maintain</h3>
+        <p>Continuously optimize your portfolio.</p>
+      </div>
     </div>
+  </section>
 
-    <!-- Content -->
-    <div class="split-content">
-      <h2>Strategic Wealth Planning</h2>
-      <p>
-        We help you grow, protect, and transition your wealth with a tailored approach
-        designed for long-term success and stability.
-      </p>
-      <button onclick="goToPage('contact')">Learn More</button>
+  <section class="split-section">
+    <div class="split-container">
+
+      <!-- Image -->
+      <div class="split-image">
+        <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e" alt="Wealth Planning">
+      </div>
+
+      <!-- Content -->
+      <div class="split-content">
+        <h2>Strategic Wealth Planning</h2>
+        <p>
+          We help you grow, protect, and transition your wealth with a tailored approach
+          designed for long-term success and stability.
+        </p>
+        <button onclick="goToPage('contact')">Learn More</button>
+      </div>
+
     </div>
+  </section>
 
-  </div>
-</section>
+  <!-- CTA -->
+  <section class="cta" id="contact">
+    <h2>Ready to Start?</h2>
+    <p>Talk to an advisor today.</p>
+    <br>
+    <button onclick="goToPage('contact')">Contact Us</button>
+  </section>
 
-<!-- CTA -->
-<section class="cta" id="contact">
-  <h2>Ready to Start?</h2>
-  <p>Talk to an advisor today.</p>
-  <button>Contact Us</button>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer">
-    <img class="logo" src="/Artboard 4.png" alt="Logo">
-    <div>
-      <li><a href="/">Home</a></li>
-      <li><a href="/about.html">About</a></li>
-      <li><a href="/events.html">Events</a></li>
-      <li><a href="/services.html">Services</a></li>
-      <li><a href="/contact.html">Contact</a></li>
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer">
+      <img class="logo" src="/Artboard 4.png" alt="Logo">
+      <div>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/events.html">Events</a></li>
+        <li><a href="/services.html">Services</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </div>
     </div>
-  </div>
-  <p>© 2026 SKCAPWealth Co. All rights reserved.</p>
-</footer>
+    <p>© 2026 SKCAPWealth Co. All rights reserved.</p>
+  </footer>
 
 
 </body>
+
 </html>

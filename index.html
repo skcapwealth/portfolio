@@ -15,6 +15,11 @@
 <!-- NAV -->
 <nav>
   <img class="logo" src="/Artboard 4.png" alt="Logo">
+  <div class="hamburger" onclick="toggleMobileMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
   <ul>
     <li><a href="/">Home</a></li>
     <li><a href="/about.html">About</a></li>
@@ -22,7 +27,7 @@
     <li><a href="/services.html">Services</a></li>
     <li><a href="/contact.html">Contact</a></li>
     <!-- Call icon -->
-     <li><a href="tel:1234567890"><i class="fa-solid fa-phone"></i></a></li>
+     <li><a href="tel:+91-9325898024"><i class="fa-solid fa-phone"></i></a></li>
   </ul>
 </nav>
 
@@ -39,18 +44,33 @@
   <h2 class="section-title">Our Services</h2>
   <div class="services">
     <div class="card">
+      <i class="fa-solid fa-piggy-bank"></i>
       <h3>Investment Planning</h3>
       <p>Customized strategies for long-term growth.</p>
     </div>
     <div class="card">
+      <i class="fa-regular fa-face-smile-wink"></i>
       <h3>Retirement Planning</h3>
       <p>Secure your future with confidence.</p>
     </div>
     <div class="card">
+      <i class="fa-solid fa-dollar-sign"></i>
       <h3>Wealth Management</h3>
       <p>Preserve and grow generational wealth.</p>
     </div>
+    <div class="card">
+      <i class="fa-solid fa-coins"></i>
+      <h3>Gold and Silver</h3>
+      <p>Enhance your wealth with precious metals.</p>
+    </div>
+    <div class="card">
+      <i class="fa-solid fa-hand-holding-medical"></i>
+      <h3>Health Insurance</h3>
+      <p>Protect your health and well-being.</p>
+    </div>
   </div>
+  <br>
+  <button class="mybutton" onclick="goToPage('services')">View All</button>
 </section>
 
 <!-- PROCESS -->
@@ -97,7 +117,8 @@
 <section class="cta" id="contact">
   <h2>Ready to Start?</h2>
   <p>Talk to an advisor today.</p>
-  <button>Contact Us</button>
+  <br>
+    <button onclick="goToPage('contact')">Contact Us</button>
 </section>
 
 <!-- FOOTER -->

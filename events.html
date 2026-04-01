@@ -13,7 +13,12 @@
 
 <!-- NAV -->
 <nav>
-  <img src="/Artboard 4.png" alt="Logo">
+  <img class="logo" src="/Artboard 4.png" alt="Logo">
+  <div class="hamburger" onclick="toggleMobileMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
   <ul>
     <li><a href="/">Home</a></li>
     <li><a href="/about.html">About</a></li>
@@ -21,7 +26,7 @@
     <li><a href="/services.html">Services</a></li>
     <li><a href="/contact.html">Contact</a></li>
     <!-- Call icon -->
-     <li><a href="tel:1234567890"><i class="fa-solid fa-phone"></i></a></li>
+     <li><a href="tel:+91-9325898024"><i class="fa-solid fa-phone"></i></a></li>
   </ul>
 </nav>
 
@@ -31,30 +36,41 @@
 <section id="services" >
   <h2 class="section-title">Our Events</h2>
   <div class="services events">
+    
+    
+    
     <div class="card">
-      <img src="/events/event-1.png" alt="Event 1">
-      <h3>Investment Planning</h3>
-      <p>Customized strategies for long-term growth.</p>
+      <img src="/events/event-4.png" alt="Event 4">
+      <h3>Govt. College Sanquelim Goa</h3>
+    </div>
+    
+    <div class="card">
+      <img src="/events/event-6.jpeg" alt="Event 6">
+      <h3>Sunil Subramaniam</h3>
+      <p>Ex-MD&CEO of Sundaram Mutual</p>
+    </div>
+    <div class="card">
+      <img src="/events/event-7.jpeg" alt="Event 7">
+      <h3>Nilesh Shah</h3>
+      <p>MD Kotak Mutual Fund</p>
+    </div>
+    <div class="card">
+      <img src="/events/event-3.png" alt="Event 3">
+      <h3>MES College</h3>
     </div>
     <div class="card">
       <img src="/events/event-2.png" alt="Event 2">
-      <h3>Retirement Planning</h3>
-      <p>Secure your future with confidence.</p>
-    </div>'
-    <div class="card">
-      <img src="/events/event-3.png" alt="Event 3">
-      <h3>Tax Optimization</h3>
-      <p>Maximize returns with smart tax strategies.</p>
+      <h3>Former CIO Equity Sundaram Fund Manager </h3>
+      <p>Meet at Goa</p>
     </div>
     <div class="card">
-      <img src="/events/event-4.png" alt="Event 4">
-      <h3>Financial Planning</h3>
-      <p>Planning for the future, one step at a time.</p>
+      <img src="/events/event-1.png" alt="Event 1">
+      <h3>Govt College Khandola Marcel Goa</h3>
+      <p>Teachers & Students</p>
     </div>
     <div class="card">
       <img src="/events/event-5.png" alt="Event 5">
-      <h3>Estate Planning</h3>
-      <p>Protect your legacy for generations to come.</p>
+      <h3>NEP Programme - Goan Higher school Teachers</h3>
     </div>
     
 </section>
@@ -70,7 +86,7 @@
   <h2>Ready to Start?</h2>
   <p>Talk to an advisor today.</p>
   <br>
-  <button>Contact Us</button>
+  <button onclick="goToPage('contact')">Contact Us</button>
 </section>
 
 
