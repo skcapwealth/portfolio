@@ -75,18 +75,18 @@ button:hover {
 
 <!-- NAV -->
 <nav>
-  <img class="logo" src="/Artboard 4.png" alt="Logo">
+  <img class="logo" src="/portfolio/Artboard 4.png" alt="Logo">
   <div class="hamburger" onclick="toggleMobileMenu()">
     <span></span>
     <span></span>
     <span></span>
   </div>
   <ul>
-    <li><a href="/">Home</a></li>
-    <li><a href="/about.html">About</a></li>
-    <li><a href="/events.html">Events</a></li>
-    <li><a href="/services.html">Services</a></li>
-    <li><a href="/contact.html">Contact</a></li>
+    <li><a href="/portfolio">Home</a></li>
+    <li><a href="/portfolio/about.html">About</a></li>
+    <li><a href="/portfolio/events.html">Events</a></li>
+    <li><a href="/portfolio/services.html">Services</a></li>
+    <li><a href="/portfolio/contact.html">Contact</a></li>
     <!-- Call icon -->
      <li><a href="tel:+91-9325898024"><i class="fa-solid fa-phone"></i></a></li>
   </ul>
@@ -99,12 +99,13 @@ button:hover {
       <h2>INTERESTED IN BECOMING A SKCAPWEALTH CLIENT?</h2>
       <p>Please fill out the form below and our team will be in contact with you.</p>
 
-      <form>
-        <input type="text" placeholder="First Name">
-        <input type="text" placeholder="Last Name">
-        <input type="tel" placeholder="Phone">
-        <input type="email" placeholder="Email">
-        <textarea placeholder="Comments (Optional)"></textarea>
+      <form action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="0b7e8299-509a-438f-9561-f215c509e68e">
+        <input type="text" name="first_name" placeholder="First Name">
+        <input type="text" name="last_name" placeholder="Last Name">
+        <input type="tel" name="phone" placeholder="Phone">
+        <input type="email" name="email" placeholder="Email">
+        <textarea name="comments" placeholder="Comments (Optional)"></textarea>
 
         <button type="submit">Submit</button>
       </form>
@@ -136,13 +137,13 @@ button:hover {
 <!-- FOOTER -->
 <footer>
   <div class="footer">
-    <img class="logo" src="/Artboard 4.png" alt="Logo">
+    <img class="logo" src="/portfolio/Artboard 4.png" alt="Logo">
     <div>
-      <li><a href="/">Home</a></li>
-      <li><a href="/about.html">About</a></li>
-      <li><a href="/events.html">Events</a></li>
-      <li><a href="/services.html">Services</a></li>
-      <li><a href="/contact.html">Contact</a></li>
+      <li><a href="/portfolio">Home</a></li>
+      <li><a href="/portfolio/about.html">About</a></li>
+      <li><a href="/portfolio/events.html">Events</a></li>
+      <li><a href="/portfolio/services.html">Services</a></li>
+      <li><a href="/portfolio/contact.html">Contact</a></li>
     </div>
   </div>
   <p>© 2026 SKCAPWealth Co. All rights reserved.</p>
