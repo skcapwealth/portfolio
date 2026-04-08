@@ -1,140 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SKCAPWealth</title>
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<script src="script.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SKCAPWealth</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="script.js"></script>
 </head>
 
 
 <body>
 
-<!-- NAV -->
-<nav>
-  <img class="logo" src="/Artboard 4.png" alt="Logo">
-  <div class="hamburger" onclick="toggleMobileMenu()">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-  <ul>
-    <li><a href="/portfolio">Home</a></li>
-    <li><a href="/portfolio/about.html">About</a></li>
-    <li><a href="/portfolio/events.html">Events</a></li>
-    <li><a href="/portfolio/services.html">Services</a></li>
-    <li><a href="/portfolio/contact.html">Contact</a></li>
-    <!-- Call icon -->
-     <li><a href="tel:+91-9325898024"><i class="fa-solid fa-phone"></i></a></li>
-  </ul>
-</nav>
-
-<!-- HERO -->
-<div class="hero">
-  <div>
-    <h2>Grow, Protect & Preserve Your Wealth</h2>
-    <button onclick="goToPage('services')">Get Started</button>
-  </div>
-</div>
-
-<!-- SERVICES -->
-<section id="services">
-  <h2 class="section-title">Our Services</h2>
-  <div class="services">
-    <div class="card">
-      <i class="fa-solid fa-piggy-bank"></i>
-      <h3>Investment Planning</h3>
-      <p>Customized strategies for long-term growth.</p>
-    </div>
-    <div class="card">
-      <i class="fa-regular fa-face-smile-wink"></i>
-      <h3>Retirement Planning</h3>
-      <p>Secure your future with confidence.</p>
-    </div>
-    <div class="card">
-      <i class="fa-solid fa-dollar-sign"></i>
-      <h3>Wealth Management</h3>
-      <p>Preserve and grow generational wealth.</p>
-    </div>
-    <div class="card">
-      <i class="fa-solid fa-coins"></i>
-      <h3>Gold and Silver</h3>
-      <p>Enhance your wealth with precious metals.</p>
-    </div>
-    <div class="card">
-      <i class="fa-solid fa-hand-holding-medical"></i>
-      <h3>Health Insurance</h3>
-      <p>Protect your health and well-being.</p>
-    </div>
-  </div>
-  <br>
-  <button class="mybutton" onclick="goToPage('services')">View All</button>
-</section>
-
-<!-- PROCESS -->
-<section id="process">
-  <h2 class="section-title">Our Process</h2>
-  <div class="process">
-    <div class="step">
-      <h3>Understand</h3>
-      <p>We analyze your financial goals.</p>
-    </div>
-    <div class="step">
-      <h3>Establish</h3>
-      <p>Create a tailored investment plan.</p>
-    </div>
-    <div class="step">
-      <h3>Maintain</h3>
-      <p>Continuously optimize your portfolio.</p>
-    </div>
-  </div>
-</section>
-
-<section class="split-section">
-  <div class="split-container">
-
-    <!-- Image -->
-    <div class="split-image">
-      <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e" alt="Wealth Planning">
-    </div>
-
-    <!-- Content -->
-    <div class="split-content">
-      <h2>Strategic Wealth Planning</h2>
-      <p>
-        We help you grow, protect, and transition your wealth with a tailored approach
-        designed for long-term success and stability.
-      </p>
-      <button onclick="goToPage('about')">Learn More</button>
-    </div>
-
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="cta" id="contact">
-  <h2>Ready to Start?</h2>
-  <p>Talk to an advisor today.</p>
-  <br>
-    <button onclick="goToPage('contact')">Contact Us</button>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer">
+  <!-- NAV -->
+  <nav>
     <img class="logo" src="/portfolio/Artboard 4.png" alt="Logo">
-    <div>
+    <div class="hamburger" onclick="toggleMobileMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul>
       <li><a href="/portfolio">Home</a></li>
       <li><a href="/portfolio/about.html">About</a></li>
       <li><a href="/portfolio/events.html">Events</a></li>
       <li><a href="/portfolio/services.html">Services</a></li>
       <li><a href="/portfolio/contact.html">Contact</a></li>
+      <!-- Call icon -->
+      <li><a href="tel:+91-9325898024"><i class="fa-solid fa-phone"></i></a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div>
+      <h2>Grow, Protect & Preserve Your Wealth</h2>
+      <button onclick="goToPage('services')">Get Started</button>
     </div>
   </div>
-  <p>© 2026 SKCAPWealth Co. All rights reserved.</p>
-</footer>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <h2 class="section-title">Our Services</h2>
+    <div class="services">
+      <div class="card">
+        <i class="fa-solid fa-piggy-bank"></i>
+        <h3>Investment Plan</h3>
+        <p>Customized strategies for long-term growth.</p>
+      </div>
+      <div class="card">
+        <i class="fa-regular fa-face-smile-wink"></i>
+        <h3>Retirement Plan & Benefits</h3>
+        <p>Secure your future with confidence.</p>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-dollar-sign"></i>
+        <h3>Wealth & Financial Goals</h3>
+        <p>Preserve and grow generational wealth.</p>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-coins"></i>
+        <h3>Gold and Silver</h3>
+        <p>Enhance your wealth with precious metals.</p>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-hand-holding-medical"></i>
+        <h3>Term & Health Insurance</h3>
+        <p>Protect your well-being and health.</p>
+      </div>
+    </div>
+    <br>
+    <button class="mybutton" onclick="goToPage('services')">View All</button>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process">
+    <h2 class="section-title">Our Process</h2>
+    <div class="process">
+      <div class="step">
+        <h3>Understand</h3>
+        <p>We analyze your financial goals.</p>
+      </div>
+      <div class="step">
+        <h3>Establish</h3>
+        <p>Create a tailored investment plan.</p>
+      </div>
+      <div class="step">
+        <h3>Maintain</h3>
+        <p>Continuously optimize your portfolio.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="split-section">
+    <div class="split-container">
+
+      <!-- Image -->
+      <div class="split-image">
+        <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e" alt="Wealth Planning">
+      </div>
+
+      <!-- Content -->
+      <div class="split-content">
+        <h2>Strategic Wealth Planning</h2>
+        <p>
+          We help you grow, protect, and transition your wealth with a tailored approach
+          designed for long-term success and stability.
+        </p>
+        <button onclick="goToPage('about')">Learn More</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta" id="contact">
+    <h2>Ready to Start?</h2>
+    <p>Talk to an advisor today.</p>
+    <br>
+    <button onclick="goToPage('contact')">Contact Us</button>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer">
+      <img class="logo" src="/portfolio/Artboard 4.png" alt="Logo">
+      <div style="display: flex;flex-direction: column;">
+        <div>
+          <li><a href="/portfolio">Home</a></li>
+          <li><a href="/portfolio/about.html">About</a></li>
+          <li><a href="/portfolio/events.html">Events</a></li>
+          <li><a href="/portfolio/services.html">Services</a></li>
+          <li><a href="/portfolio/contact.html">Contact</a></li>
+        </div>
+        <div>
+          <li><a href="" target="_blank"><i class="fa-brands fa-facebook"></i></a></li>
+          <li><a href="" target="_blank"><i class="fa-brands fa-whatsapp"></i></a></li>
+          <li><a href="" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
+          <li><a href="" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
+        </div>
+      </div>
+    </div>
+    <p>© 2026 SKCAPWealth Co. All rights reserved.</p>
+  </footer>
 
 </body>
+
 </html>
