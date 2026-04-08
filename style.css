@@ -104,7 +104,7 @@ nav ul li a:hover {
 .hero {
   height: 100vh;
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40');
+    url('/portfolio/images/Wealth-Management-4107721067.jpg');
   background-size: cover;
   display: flex;
   justify-content: center;
@@ -129,7 +129,7 @@ nav ul li a:hover {
 .hero2 {
   height: 100vh;
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url('portfolio/images/Wealth-Management-4107721067.jpg');
+    url('/portfolio/images/Wealth-Management-4107721067.jpg');
   background-size: cover;
   display: flex;
   justify-content: center;
